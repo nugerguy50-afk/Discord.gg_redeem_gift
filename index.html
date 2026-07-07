@@ -5,19 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Discord Gift</title>
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph -->
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Discord Gift">
 <meta property="og:title" content="A WILD GIFT APPEARS!">
-<meta property="og:image" content="https://cdn.discordapp.com/embed/avatars/0.png">
 <meta property="og:description" content="Nitro Expires in 43 hours">
-<meta property="og:url" content="https://yourwebsite.com/gift">
+<meta property="og:image" content="https://nugerguy50-afk.github.io/fake-discord-nitro-prank-Present-version/Hello.jpg">
+<meta property="og:url" content="https://nugerguy50-afk.github.io/fake-discord-nitro-prank-Present-version/">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:gg sans, "Segoe UI", sans-serif;
+    font-family:gg sans,"Segoe UI",sans-serif;
 }
 
 body{
@@ -26,6 +27,7 @@ body{
     justify-content:center;
     align-items:center;
     height:100vh;
+    overflow:hidden;
 }
 
 .card{
@@ -98,13 +100,23 @@ body{
 .button:hover{
     background:#6d79ff;
 }
-</style>
 
+#prankImage{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    object-fit:contain;
+    background:black;
+    z-index:9999;
+}
+</style>
 </head>
 <body>
 
-<div class="markdown">
-<div class="card">
+<div class="card" id="giftCard">
 
     <div class="title">
         # A WILD GIFT APPEARS!
@@ -113,7 +125,7 @@ body{
     <div class="info">
 
         <div class="icon">
-            <img src="https://cdn.discordapp.com/embed/avatars/0.png">
+            <img src="Hello.jpg" alt="Gift">
         </div>
 
         <div>
@@ -123,12 +135,21 @@ body{
 
     </div>
 
-    <button class="button">
+    <button class="button" onclick="showPrank()">
         Open Gift
     </button>
 
 </div>
-</div>
+
+<img id="prankImage" src="gorillamiddlefinger.jpg" alt="Prank">
+
+<script>
+function showPrank() {
+    document.getElementById("giftCard").style.display = "none";
+    document.body.style.background = "black";
+    document.getElementById("prankImage").style.display = "block";
+}
+</script>
 
 </body>
 </html>
